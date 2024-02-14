@@ -1,0 +1,16 @@
+@use '../../assets/styles/variables.scss' as *;
+
+.footer {
+  margin: auto auto 40px auto;
+  position: relative;
+  overflow: visible;
+  align-self: flex-end;
+}
+
+.unActive {
+  padding: 0;
+
+  &:hover {
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,235 @@
+@use '../../assets/styles/variables.scss' as *;
+
+.container {
+  height: 200px;
+  width: 1200px;
+  transition: width 0.5s;
+  position: fixed;
+  margin-top: 20px;
+  padding: 0;
+  z-index: 99;
+  transition: height 0.2s, background-color 0.2s, box-shadow 0.2s;
+  background-color: transparent;
+
+  &.scrolled {
+    height: 140px;
+  }
+}
+
+.header {
+  width: 100%;
+  height: 100%;
+  @include flexCenter;
+  z-index: 1;
+  position: relative;
+  transition: width 0.5s, background-color 0.2s;
+  margin-bottom: 0;
+  background-color: $dynamicWhite;
+  padding: $mainPadding;
+  border-radius: $mainBorderRadius;
+
+  &.showContacts {
+    width: calc(100% - 30px);
+  }
+}
+
+.titleContainer {
+  position: relative;
+}
+
+.title {
+  font-size: 4rem;
+  -webkit-text-stroke: 3px rgb(172 0 213);
+  text-stroke: 4px rgb(141 0 175);
+  color: transparent;
+  position: relative;
+
+  &::before {
+    content: 'FRONT END';
+    position: absolute;
+    -webkit-text-stroke: 6px rgb(171 0 255 / 53%);
+    text-stroke: 4px rgb(141, 0, 175);
+    color: transparent;
+    filter: blur(4px);
+    animation: flicker 5s 1s infinite;
+  }
+}
+
+.subTitle {
+  font-size: 2rem;
+  font-family: 'Pacifico', cursive;
+  position: absolute;
+  right: pxToRem(35);
+  bottom: pxToRem(-15);
+  color: $orangeSecondary;
+
+  &::before,
+  &::after {
+    content: '';
+    background-color: $orange;
+    height: 5px;
+    position: absolute;
+    border-radius: 5px;
+    top: 55%;
+  }
+
+  &::before {
+    left: -25px;
+    width: 20px;
+  }
+
+  &::after {
+    right: -40px;
+    width: 35px;
+  }
+}
+
+.contactsBtn {
+  position: absolute;
+  right: $mainPadding;
+  top: $mainPadding;
+  display: flex;
+  margin-left: auto;
+
+  &:hover,
+  &.clicked {
+    & .contactsIcon {
+      stroke-width: 1px;
+      transition: all 0.5s;
+    }
+  }
+}
+
+.contactsIcon {
+  font-size: 2rem !important;
+  color: $dynamicBlack;
+  transition: color 0.2s !important;
+}
+
+@keyframes flicker {
+  from {
+    opacity: 0.5;
+  }
+  4% {
+    opacity: 0.5;
+  }
+  6% {
+    opacity: 0.45;
+  }
+  8% {
+    opacity: 0.55;
+  }
+  10% {
+    opacity: 0.45;
+  }
+  11% {
+    opacity: 0.5;
+  }
+  12% {
+    opacity: 0.65;
+  }
+  14% {
+    opacity: 0.55;
+  }
+  16% {
+    opacity: 0.7;
+  }
+  17% {
+    opacity: 0.55;
+  }
+  19% {
+    opacity: 0.5;
+  }
+  20% {
+    opacity: 0.5;
+  }
+  24% {
+    opacity: 0.5;
+  }
+  26% {
+    opacity: 0.69;
+  }
+  28% {
+    opacity: 0.5;
+  }
+  38% {
+    opacity: 0.45;
+  }
+  40% {
+    opacity: 0.5;
+  }
+  42% {
+    opacity: 0.6;
+  }
+  44% {
+    opacity: 0.5;
+  }
+  46% {
+    opacity: 0.5;
+  }
+  56% {
+    opacity: 0.5;
+  }
+  58% {
+    opacity: 0.75;
+  }
+  60% {
+    opacity: 0.5;
+  }
+  68% {
+    opacity: 0.5;
+  }
+  70% {
+    opacity: 0.6;
+  }
+  72% {
+    opacity: 0.5;
+  }
+  93% {
+    opacity: 0.5;
+  }
+  95% {
+    opacity: 0.6;
+  }
+  97% {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 1199px) {
+  .container {
+    width: 95%;
+  }
+
+  .title {
+    -webkit-text-stroke: 2px rgb(172 0 213);
+    text-stroke: 2px rgb(141 0 175);
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    margin-top: 10px;
+  }
+
+  .subTitle {
+    &::before,
+    &::after {
+      content: '';
+      height: 3px;
+    }
+  }
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+  .container {
+    position: absolute;
+
+    &.scrolled {
+      height: 200px;
+    }
+  }
+}

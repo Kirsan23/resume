@@ -1,0 +1,198 @@
+@use '../../assets/styles/variables.scss' as *;
+
+.about {
+  display: flex;
+  gap: $mainGap;
+  margin-bottom: 5rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: $mainGap;
+}
+
+.characteristics {
+  min-width: 30%;
+  min-height: 100%;
+  background-color: $dynamicBlack;
+  color: $dynamicWhite;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+
+  & .photo {
+    width: 80%;
+    overflow: hidden;
+    display: flex;
+    border: 10px solid $dynamicWhite;
+    border-radius: 15px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 55%;
+    left: 50%;
+    z-index: 1;
+    animation: appeared 1s 1 forwards;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &.hidden {
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      backdrop-filter: blur(2px);
+      animation: appeared 1s 1 forwards;
+    }
+  }
+
+  & .titleWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & .title {
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+
+  & .addContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;
+    flex: 1;
+
+    & .addItem {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 900;
+
+      & .addItemValue {
+        text-align: end;
+      }
+
+      &:hover {
+        & :first-child,
+        & :last-child {
+          border-top: 4px solid $dynamicWhite;
+          border-bottom: 4px solid $dynamicWhite;
+        }
+      }
+
+      & :nth-child(n) {
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+
+      & :first-child,
+      & :last-child {
+        border-top: 4px solid $dynamicBlackSecondary;
+        border-bottom: 4px solid $dynamicBlackSecondary;
+        transition: border-color 1s;
+      }
+
+      & :first-child {
+        border-left: 4px solid $dynamicWhite;
+        border-radius: 15px 0 0 15px;
+        padding: 5px;
+        width: 50%;
+      }
+
+      & :nth-child(even) {
+        justify-content: center;
+        width: 10%;
+      }
+
+      & :last-child {
+        border-right: 4px solid $dynamicWhite;
+        border-radius: 0 15px 15px 0;
+        padding: 5px;
+        width: 40%;
+        justify-content: flex-end;
+      }
+    }
+  }
+}
+
+.photoBtn {
+  background-color: transparent;
+  color: $dynamicWhite;
+  @include flexCenter;
+  transition: background-color 0.2s, color 0.2s;
+  border-radius: 5px;
+  z-index: 1;
+
+  &:hover,
+  &.active {
+    background-color: $dynamicWhite;
+    color: $dynamicBlack;
+  }
+}
+
+.item {
+  margin-bottom: 0;
+  flex: 1;
+}
+
+.list {
+  list-style-type: circle;
+  padding-left: $mainPadding;
+}
+
+@keyframes appeared {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 767px) and (orientation: portrait) {
+  .about {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    & .photo {
+      width: 60vw;
+      top: 50%;
+    }
+  }
+
+  .characteristics {
+    & .addContainer {
+      & .addItem {
+        & :first-child {
+          width: 45%;
+        }
+
+        & :last-child {
+          width: 45%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+  .characteristics {
+    min-width: 35%;
+  }
+}

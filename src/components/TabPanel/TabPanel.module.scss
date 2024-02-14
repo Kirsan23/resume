@@ -1,0 +1,22 @@
+@use '../../assets/styles/variables.scss' as *;
+
+.tabPanel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: pxToRem(20);
+  margin-bottom: 2rem;
+}
+
+.btn {
+  width: pxToRem(150);
+  height: 30px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1199px) {
+  .tabPanel {
+    width: auto;
+    margin: 0 20px 2rem 20px;
+  }
+}

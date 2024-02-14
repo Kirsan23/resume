@@ -1,0 +1,34 @@
+@use '../../assets/styles/variables.scss' as *;
+
+.titledItemTemplate {
+  padding: 0;
+  background-color: transparent;
+  display: flex;
+}
+
+.title {
+  background-color: $dynamicBlack;
+  color: $dynamicWhite;
+  writing-mode: vertical-rl;
+  text-align: center;
+  text-orientation: upright;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: $mainBorderRadius 0 0 $mainBorderRadius;
+  text-transform: uppercase;
+}
+
+.text {
+  border-radius: 0 $mainBorderRadius $mainBorderRadius 0;
+  background-color: $dynamicWhite;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.text,
+.title {
+  transition: background-color 0.2s, color 0.2s;
+  align-self: stretch;
+  padding: $mainPadding;
+}

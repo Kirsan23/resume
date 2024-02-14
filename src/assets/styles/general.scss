@@ -1,0 +1,68 @@
+@use '../../assets/styles/variables.scss' as *;
+
+:root {
+  --dynamic-color: #fff;
+  --secondary-dynamic-color: #333;
+  --dynamic-color2: rgb(8 8 8 / 13%);
+  --secondary-dynamic-color2: rgba(255, 255, 255, 0.1215686275);
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: $black;
+
+  &.dark {
+    color: $white;
+    --dynamic-color: #333;
+    --secondary-dynamic-color: #fff;
+    --dynamic-color2: rgba(255, 255, 255, 0.1215686275);
+    --secondary-dynamic-color2: rgb(8 8 8 / 13%);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0;
+  color: $dynamicBlack;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+p {
+  text-align: justify;
+}
+
+abbr {
+  text-decoration: none;
+}
+
+@media (max-width: 1199px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1023px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 767px) {
+  html {
+    font-size: 12px;
+  }
+}

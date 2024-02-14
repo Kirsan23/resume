@@ -1,0 +1,39 @@
+$white: #fff;
+$whiteSecondary: rgb(8 8 8 / 13%);
+$black: #333;
+$blackSecondary: rgba(255, 255, 255, 0.1215686275);
+$orange: rgba(255, 166, 0, 1);
+$orangeSecondary: rgba(255, 166, 0, 0.8392156863);
+$yellow: #ffea18;
+$green: rgba(80, 141, 80, 1);
+$greenSecondary: rgba(80, 141, 80, 0.8392156863);
+$blue: #2590b7;
+$dynamicWhite: var(--dynamic-color);
+$dynamicBlack: var(--secondary-dynamic-color);
+$dynamicWhiteSecondary: var(--dynamic-color2);
+$dynamicBlackSecondary: var(--secondary-dynamic-color2);
+$duration: 0.2s;
+
+$mainBorderRadius: 20px;
+$mainPadding: 20px;
+$mainGap: 20px;
+
+$mainBoxShadow: 0px 0px 0px 0px rgba(148, 148, 148, 0.1),
+  0px 32px 32px 0px rgba(83, 83, 83, 0.09),
+  0px 128px 51px 0px rgba(148, 148, 148, 0.01),
+  0px 200px 56px 0px rgba(148, 148, 148, 0);
+
+$mainBoxHoverShadow: 0px 0px 0px 0px rgba(148, 148, 148, 0.1),
+  0px 5px 20px 5px rgba(61, 61, 61, 0.49),
+  0px 128px 51px 0px rgba(148, 148, 148, 0.01),
+  0px 200px 56px 0px rgba(148, 148, 148, 0);
+
+@function pxToRem($pxValue) {
+  @return #{$pxValue / 16}rem;
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

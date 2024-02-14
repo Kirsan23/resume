@@ -1,0 +1,239 @@
+@use '../../assets/styles/variables.scss' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 5rem;
+}
+
+.item {
+  @include flexCenter;
+  gap: $mainBorderRadius;
+}
+
+.itemTitle {
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: rgb(51 51 51 / 3%);
+}
+
+.itemInfo {
+  width: 50%;
+
+  &__sec {
+    width: max-content;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  transition: opacity 0.5s;
+  font-weight: bold;
+  font-size: 0.8rem;
+  position: relative;
+
+  &.transparent {
+    opacity: 0.5;
+  }
+
+  &:hover {
+    @mixin boxShadow($color) {
+      box-shadow: 0px 0px 10px 0px $color;
+    }
+
+    & .low {
+      @include boxShadow($orange);
+    }
+
+    & .medium {
+      @include boxShadow($yellow);
+    }
+
+    & .high {
+      @include boxShadow($green);
+    }
+
+    & .ultra {
+      @include boxShadow($blue);
+    }
+  }
+}
+
+.title,
+.langLvl {
+  background-color: $dynamicBlack;
+  border-radius: 5px;
+  color: $dynamicWhite;
+  text-align: center;
+}
+
+.title {
+  width: 20%;
+}
+
+.level {
+  height: 5px;
+  flex: 1;
+  border-radius: $mainBorderRadius;
+  background-color: #e7e7e754;
+  overflow: hidden;
+  position: relative;
+  transition: box-shadow 1s;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: background-color 0.5s, transform 0.5s;
+    border-radius: $mainBorderRadius;
+  }
+}
+
+.langLvl {
+  padding: 0 10px;
+}
+
+.low {
+  &::before {
+    animation: low 2s 0.2s forwards;
+  }
+}
+
+.medium {
+  &::before {
+    animation: medium 2.5s 0.2s forwards;
+  }
+}
+
+.high {
+  &::before {
+    animation: high 3s 0.2s forwards;
+  }
+}
+
+.ultra {
+  &::before {
+    animation: ultra 3.5s 0.2s forwards;
+  }
+}
+
+.language {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+@keyframes low {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    background-color: $orange;
+    transform: translateX(-75%);
+  }
+}
+
+@keyframes medium {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  50% {
+    background-color: $orange;
+    transform: translateX(-75%);
+  }
+
+  100% {
+    background-color: $yellow;
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes high {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  33% {
+    background-color: $orange;
+    transform: translateX(-75%);
+  }
+
+  66% {
+    background-color: $yellow;
+    transform: translateX(-50%);
+  }
+
+  100% {
+    background-color: $green;
+    transform: translateX(-25%);
+  }
+}
+
+@keyframes ultra {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  25% {
+    background-color: $orange;
+    transform: translateX(-75%);
+  }
+
+  50% {
+    background-color: $yellow;
+    transform: translateX(-50%);
+  }
+
+  75% {
+    background-color: $green;
+    transform: translateX(-25%);
+  }
+
+  100% {
+    background-color: $blue;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes pulse {
+  0% {
+  }
+
+  100% {
+  }
+}
+
+@media (max-width: 767px) and (orientation: portrait) {
+  .container {
+    flex-direction: column;
+  }
+  .item {
+    width: auto;
+    flex-direction: column-reverse;
+
+    &__sec {
+      flex-direction: column;
+    }
+  }
+
+  .itemInfo {
+    width: 100%;
+  }
+}

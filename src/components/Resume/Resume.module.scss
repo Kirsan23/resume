@@ -1,0 +1,26 @@
+@use '../../assets/styles/variables.scss' as *;
+
+.resume {
+  max-width: 1200px;
+  min-height: 100svh;
+  width: 1200px;
+  scroll-behavior: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs {
+  margin-top: calc(250px + 2rem) !important;
+}
+
+@media (max-width: 1199px) {
+  .resume {
+    width: 95%;
+  }
+}
+
+@media (max-width: 767px) {
+  .tabs {
+    margin: calc(210px + 2rem) 20px 2rem 20px !important;
+  }
+}

@@ -1,0 +1,32 @@
+@use '../../../assets/styles/variables.scss' as *;
+
+.btn {
+  @include flexCenter;
+  transition: scale $duration;
+
+  &:active {
+    scale: 0.9;
+
+    &:hover {
+      scale: 0.9;
+    }
+  }
+
+  &:hover {
+    scale: 1.1;
+  }
+}
+
+.nonScale {
+  &:active {
+    scale: 1;
+
+    &:hover {
+      scale: 1;
+    }
+  }
+
+  &:hover {
+    scale: 1;
+  }
+}

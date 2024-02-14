@@ -1,0 +1,20 @@
+@use '../../assets/styles/variables.scss' as *;
+
+.itemTemplate {
+  border-radius: $mainBorderRadius;
+  box-shadow: $mainBoxShadow;
+  overflow: hidden;
+  transform: translateZ(0);
+  padding: $mainPadding;
+  background-color: $dynamicWhite;
+  transition: background-color 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    box-shadow: $mainBoxHoverShadow;
+    z-index: 2;
+  }
+}
+
+.notFullWidth {
+  width: auto;
+}

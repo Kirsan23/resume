@@ -1,0 +1,131 @@
+{
+  "tabPanel": {
+    "about": "About",
+    "skills": "Skills",
+    "portfolio": "Portfolio"
+  },
+  "about": {
+    "characteristics": { "name": "Kyrylo Berehoviy" },
+    "me": {
+      "title": "Me",
+      "description": "My innate interest in computers and experience with networks led me to the IT, where I want to realize all my potential. I test my nervous system by assembling puzzles, I calm it down by upgrading my computer. I love long walks. 30 km is a great opportunity to reflect on the frailty of life. Pathological predisposition to solve challenges."
+    },
+    "goals": {
+      "title": "Goals",
+      "items": [
+        "A position in a forward-looking company that will allow me to develop as a programmer.",
+        "Acquisition of new knowledge and skills in development.",
+        "Professional and personal growth in a friendly working atmosphere."
+      ]
+    },
+    "add": [
+      { "title": "age", "value": "31" },
+      { "title": "marital status", "value": "married" },
+      { "title": "nationality", "value": "Ukrainian" },
+      { "title": "enthusiasm", "value": "off the charts" },
+      { "title": "critical thinking", "value": "high level" },
+      { "title": "stress resistance", "value": "pffft" },
+      { "title": "creative approach", "value": "👨‍🎨" }
+    ]
+  },
+  "skills": {
+    "softSkills": {
+      "title": "Soft Skills",
+      "list": [
+        {
+          "title": "Communicable",
+          "description": ""
+        },
+        {
+          "title": "Fast learner",
+          "description": ""
+        },
+        {
+          "title": "Responsible",
+          "description": ""
+        },
+        {
+          "title": "Purposeful",
+          "description": ""
+        },
+        {
+          "title": "Emotionally stable",
+          "description": ""
+        },
+        {
+          "title": "Proactive",
+          "description": ""
+        }
+      ]
+    },
+    "hardSkills": {
+      "title": "Hard Skills"
+    },
+    "languages": {
+      "title": "Languages",
+      "list": [
+        { "title": "Ukrainian", "lvl": "native" },
+        { "title": "English", "lvl": "pre-intermediate" },
+        { "title": "Russian", "lvl": "native" }
+      ]
+    }
+  },
+  "days": ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
+  "miniGame": {
+    "title": "Time Flow",
+    "info": {
+      "active": "active",
+      "available": "available",
+      "prime": "only available with premium subscription"
+    }
+  },
+  "portfolio": [
+    {
+      "title": "stage 1",
+      "subtitle": "The First Experience",
+      "link": "https://github.com/Kirsan23/Stage-1",
+      "description": [
+        "It all started with the one-week Front-End development marathon in Ukrainian IT school. As part of the marathon, we had to create a CV page, according to the layout from Figma.com. Even during the marathon, I became very interested in the additional features of HTML and CSS. The marathon was over, but the interest was only growing.",
+        "I am so lucky that I have a friend who has been working as a Front-End developer for many years. So, I decided to ask questions and consult with him.",
+        "My friend suggested to make another maquette from the Figma website, but already with him as a mentor. Of course, I couldn't refuse, because I was very interested. That's how the project with the simple name 'Stage 1' has appeared.",
+        "I learned a lot while working on this project. For example, I studied pseudo-elements and pseudo-classes better, I started to get acquainted with simple animations, learned additional HTML capabilities.",
+        "To make a mobile version of the page I dealt with media requests.",
+        "It gradually came to JavaScript. And at that moment I realized that everything is more interesting than it seemed to me before.",
+        "At this project, the presence of JS was kept to a minimum because there was practically no need for it.",
+        "But the key achievement of this project was that I became even more interested (the number of open tabs with requests for \"how to do \"something\" on Google was inexorably increasing)."
+      ]
+    },
+    {
+      "title": "stage 2",
+      "subtitle": "Acquaintance with React",
+      "link": "https://github.com/Kirsan23/Stage-2",
+      "description": [
+        "One day my mentor told me - \"Finish with this layout and let's move on\".",
+        "The task for the new project was to get acquainted with the library for JS - React and the transition from CSS to SASS (for experiments, a new layout was taken from the Figma site).",
+        "Half an hour on YouTube + a few (dozens) of open tabs with Google searches and I got down to business.",
+        "It was difficult at first, but it only made me more interested, because I always get more interested when I don't understand something and I need to figure out how it works.",
+        "Gradually, I got acquainted with the structure of the React project, with hooks (useState, useRef, useEffect and useCallback), I began to understand the specifics of React work (when renderings take place, etc.), I tried (successfully) to use Context (to change themes) and became friends with SASS.",
+        "Once, when I already \"felt my strength\" a little, I decided to try to write my own slider for one of the components (in the first project, I used the ready-made slider code and simply rewrote it a little for my needs). I was very happy when something working came out.",
+        "Then my friend named \"Mentor\", advised me to study server requests. He offered me several API options so that I could request data there - this is how I got acquainted with asynchronous functions in JS and learned how to process GET requests.",
+        "The next step was Redux...",
+        "Although I understood how it works, I couldn't figure out how to add Redux to the project.",
+        "But this beast was also defeated. I used RTK (Redux Toolkit) for GET requests.",
+        "In this project, I learned a lot for myself and was very inspired by the React library. The combination of HTML and JS is exactly what I am very interested in working with."
+      ]
+    }
+  ],
+  "languages": {
+    "title": "Languages",
+    "list": [
+      { "name": "Ukrainian", "lvl": "native" },
+      { "name": "English", "lvl": "pre-intermediate" },
+      { "name": "Russian", "lvl": "native" }
+    ]
+  },
+  "hard skills": {
+    "title": "Hard Skills"
+  },
+  "soft skills": {
+    "title": "Soft Skills"
+  }
+}

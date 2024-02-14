@@ -1,0 +1,10 @@
+@use '../../../assets/styles/variables.scss' as *;
+
+.themeToggler {
+  left: $mainPadding;
+  top: $mainPadding;
+}
+
+.icon {
+  font-size: 2rem !important;
+}

@@ -1,0 +1,15 @@
+@use '../../../assets/styles/variables.scss' as *;
+
+.languageToggler {
+  left: 60px;
+  top: $mainPadding;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.icon {
+  color: $dynamicBlack;
+  width: 100%;
+  transition: color 0.2s;
+}

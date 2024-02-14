@@ -1,0 +1,294 @@
+@use '../../assets/styles/variables.scss' as *;
+
+.salary {
+  position: absolute;
+  top: 0;
+  right: 50%;
+  transform: translate(50%, -50%);
+  padding: 5px $mainPadding;
+  color: $white;
+  font-weight: 900;
+  z-index: 2;
+
+  &.opened {
+    background-color: $green;
+    border: 5px solid $dynamicWhite;
+    transition: background-color $duration, border $duration;
+    border-radius: 15px;
+
+    &::after {
+      content: none;
+    }
+
+    &::before {
+      content: none;
+    }
+  }
+}
+
+.btn {
+  position: absolute;
+  background-color: $dynamicWhite;
+  top: -30px;
+  color: $white;
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  font-weight: bold;
+  animation: appeared 2s 1 forwards;
+  @include flexCenter;
+  box-shadow: $mainBoxShadow;
+
+  &.infoBtn {
+    left: 30%;
+  }
+
+  &.closeBtn {
+    right: 30%;
+  }
+}
+
+.info {
+  position: absolute;
+  background-color: rgb(77 77 77 / 39%);
+  width: max-content;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  backdrop-filter: blur(5px);
+  border-radius: $mainBorderRadius;
+  animation: appeared 1s 1 forwards;
+  @include flexCenter;
+  flex-direction: column;
+  gap: 10px;
+  padding: $mainPadding;
+  box-shadow: $mainBoxShadow;
+}
+
+.itemContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+
+  & .orange,
+  .green,
+  .gray {
+    width: 40px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 5px;
+  }
+
+  & .orange {
+    background-color: $orange;
+  }
+
+  & .green {
+    background-color: $green;
+  }
+
+  & .gray {
+    background-color: #b3b3b3;
+  }
+
+  .description {
+    font-size: 0.7rem;
+    color: $white;
+    font-weight: 600;
+  }
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  animation: appeared 2s 1 forwards;
+}
+
+.icon {
+  animation: rotates 5000ms infinite;
+}
+
+.slider {
+  width: 10px;
+  height: auto;
+  cursor: pointer;
+}
+
+:global(.track) {
+  width: 100%;
+  border-radius: $mainBorderRadius;
+}
+
+:global(.track-0) {
+  background-color: $green;
+}
+
+:global(.track-1) {
+  background-color: $orange;
+}
+
+.thumb {
+  width: 20px;
+  height: 20px;
+  background-color: $dynamicBlack;
+  border-radius: $mainBorderRadius;
+  transform: translateX(50%);
+  right: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  &.active {
+    border: 5px solid $blue;
+  }
+
+  &::after {
+    content: '$';
+    color: $dynamicWhite;
+    font-weight: 900;
+    font-size: 25px;
+    transform: translateY(0.5px);
+  }
+}
+
+.schedule {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  gap: 5px;
+
+  & .scheduleItem {
+    &:nth-last-child(-n + 2) {
+      width: 20px;
+      display: flex;
+      flex-direction: column;
+
+      & .time {
+        flex: 1;
+      }
+
+      & .day {
+        color: $white;
+        background-color: #b3b3b3;
+      }
+    }
+  }
+}
+
+.scheduleItem {
+  width: 40px;
+}
+
+.day {
+  background-color: $dynamicBlack;
+  text-align: center;
+  color: $dynamicWhite;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+.time {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 3px;
+  margin-bottom: 20px;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    background-color: #b3b3b34a;
+    border-radius: 10px;
+    height: 100%;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+    z-index: -1;
+  }
+}
+
+.hour {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 5px;
+  color: $white;
+  width: 100%;
+  height: 20px;
+  background-color: #b3b3b3;
+  font-weight: 700;
+  transition: background-color 0.5s;
+
+  &.available {
+    background-color: $orange;
+
+    &.active {
+      background-color: $green;
+    }
+  }
+
+  &.unavailable {
+    width: 0px;
+    height: 0px;
+    padding: 0;
+  }
+}
+
+@keyframes rotates {
+  0% {
+    transform: rotate(0deg);
+  }
+  8.0% {
+    transform: rotate(0deg);
+  }
+  12.0% {
+    transform: rotate(42deg);
+  }
+  16.0% {
+    transform: rotate(-35deg);
+  }
+  20.0% {
+    transform: rotate(0deg);
+  }
+  23.0% {
+    transform: rotate(28deg);
+  }
+  26.0% {
+    transform: rotate(-20deg);
+  }
+  29.0% {
+    transform: rotate(0deg);
+  }
+  31.0% {
+    transform: rotate(16deg);
+  }
+  33.0% {
+    transform: rotate(-12deg);
+  }
+  35.0% {
+    transform: rotate(0deg);
+  }
+  37.0% {
+    transform: rotate(-6deg);
+  }
+  39.0% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes appeared {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
