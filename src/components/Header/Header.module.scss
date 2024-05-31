@@ -3,12 +3,11 @@
 .container {
   height: 200px;
   width: 1200px;
-  transition: width 0.5s;
   position: fixed;
   margin-top: 20px;
   padding: 0;
   z-index: 99;
-  transition: height 0.2s, background-color 0.2s, box-shadow 0.2s;
+  transition: height 0.2s, background-color 0.2s, box-shadow 0.2s, width 0.5s;
   background-color: transparent;
 
   &.scrolled {
@@ -45,7 +44,7 @@
   position: relative;
 
   &::before {
-    content: 'FRONT END';
+    content: 'BEREHOVYI';
     position: absolute;
     -webkit-text-stroke: 6px rgb(171 0 255 / 53%);
     text-stroke: 4px rgb(141, 0, 175);

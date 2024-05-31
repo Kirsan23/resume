@@ -44,8 +44,8 @@ export const Header: React.FC = () => {
         className={`${styles.header} ${isClicked ? styles.showContacts : ''}`}
       >
         <div className={styles.titleContainer}>
-          <h1 className={styles.title}>FRONT END</h1>
-          <h2 className={styles.subTitle}>developer</h2>
+          <h1 className={styles.title}>BEREHOVYI</h1>
+          <h2 className={styles.subTitle}>Kyrylo</h2>
         </div>
         <LanguageToggler />
         <ThemeToggler />
