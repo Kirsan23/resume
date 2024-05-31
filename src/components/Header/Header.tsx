@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 import { ItemTemplate } from '../../templates/ItemTemplate/ItemTemplate';
@@ -9,11 +9,11 @@ import { Button } from '../buttons';
 import styles from './Header.module.scss';
 
 export const Header: React.FC = () => {
-  const [isCkicked, setIsCkicked] = useState<boolean>(false);
+  const [isClicked, setIsClicked] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
 
   const handleClick = () => {
-    setIsCkicked(!isCkicked);
+    setIsClicked(!isClicked);
   };
 
   useEffect(() => {
@@ -41,7 +41,7 @@ export const Header: React.FC = () => {
     >
       <Contacts />
       <div
-        className={`${styles.header} ${isCkicked ? styles.showContacts : ''}`}
+        className={`${styles.header} ${isClicked ? styles.showContacts : ''}`}
       >
         <div className={styles.titleContainer}>
           <h1 className={styles.title}>FRONT END</h1>
@@ -50,7 +50,7 @@ export const Header: React.FC = () => {
         <LanguageToggler />
         <ThemeToggler />
         <Button
-          className={`${styles.contactsBtn} ${isCkicked ? styles.clicked : ''}`}
+          className={`${styles.contactsBtn} ${isClicked ? styles.clicked : ''}`}
           onClick={handleClick}
         >
           <AccountCircleIcon className={styles.contactsIcon} />
